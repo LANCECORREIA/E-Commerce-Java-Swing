@@ -183,7 +183,7 @@ public class RegisterShopScreen extends javax.swing.JFrame {
         if (!et_gstno.getText().isEmpty() && !et_username1.getText().isEmpty() && !et_email.getText().isEmpty() && !et_pass.getText().isEmpty() && !jPasswordField1.getText().isEmpty()) {
             if (et_pass.getText().equalsIgnoreCase(jPasswordField1.getText())) {
                 try {  //jdbc:mysql://localhost:3306/cakemarket?user=root&password=Jayshree123
-                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/demo?user=root&password=nihal123");
+                    con = DriverManager.getConnection("jdbc:mysql://sql5.freemysqlhosting.net:3306/sql5467923","sql5467923","i72hfcDGCJ");
                     ps = con.prepareStatement("insert into shop values(?,?,?,?,?)");
                     ps.setString(1, et_gstno.getText());
                     ps.setString(2, et_username1.getText());

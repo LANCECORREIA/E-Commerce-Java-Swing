@@ -132,7 +132,7 @@ public class FeedbackScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (!et_title.getText().isEmpty() && !et_info.getText().isEmpty()) {
             try {  //jdbc:mysql://localhost:3306/cakemarket?user=root&password=Jayshree123
-                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/demo?user=root&password=nihal123");
+                con = DriverManager.getConnection("jdbc:mysql://sql5.freemysqlhosting.net:3306/sql5467923","sql5467923","i72hfcDGCJ");
                 ps = con.prepareStatement("insert into feedback(fusername,finfo,ftitle) values(?,?,?)");
                 ps.setString(1, cusername);
                 ps.setString(2, et_info.getText());

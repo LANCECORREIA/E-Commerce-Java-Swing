@@ -158,7 +158,7 @@ public class LoginShopScreen extends javax.swing.JFrame {
         String passgot = null;
         if (!username.isEmpty() && !pass.isEmpty()) {
             try {  //jdbc:mysql://localhost:3306/cakemarket?user=root&password=Jayshree123
-                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/demo?user=root&password=nihal123");
+                con = DriverManager.getConnection("jdbc:mysql://sql5.freemysqlhosting.net:3306/sql5467923","sql5467923","i72hfcDGCJ");
                 ps = con.prepareStatement("select spassword from shop where username = ?");
                 ps.setString(1, username);
                 ResultSet rs = ps.executeQuery();

@@ -32,7 +32,7 @@ public class Invoice extends javax.swing.JFrame {
     public Invoice(String qty, int pid) {
         initComponents();
         try {
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/demo?user=root&password=nihal123");
+            con = DriverManager.getConnection("jdbc:mysql://sql5.freemysqlhosting.net:3306/sql5467923","sql5467923","i72hfcDGCJ");
             ps = con.prepareStatement("select p.pname,p.price,s.sname from shop s,product p where s.sname = p.shopinfo and p.pid = ?");
             ps.setInt(1, pid);
             ResultSet rs = ps.executeQuery();

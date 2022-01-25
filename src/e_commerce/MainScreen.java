@@ -60,9 +60,9 @@ public class MainScreen extends javax.swing.JFrame {
         model.addColumn("Qty");
         model.addColumn("id");
         try {
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/demo?user=root&password=nihal123");
-            CallableStatement sp = con.prepareCall("select i.smallimage,p.pname,p.price,p.quantity,p.pid from image i,product p where i.category = p.category;");
-            ResultSet rs = sp.executeQuery();
+            con = DriverManager.getConnection("jdbc:mysql://sql5.freemysqlhosting.net:3306/sql5467923","sql5467923","i72hfcDGCJ");
+            CallableStatement sp = con.prepareCall("call GetProductData()");
+            ResultSet rs= sp.executeQuery();
             while (rs.next()) {
                 byte[] imagedata = rs.getBytes("smallimage");
                 image = new ImageIcon(imagedata);

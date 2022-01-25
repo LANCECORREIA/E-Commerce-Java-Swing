@@ -38,7 +38,7 @@ public class BuyScreen extends javax.swing.JFrame {
         Productid = pid;
         jSpinner1.setEditor(new JSpinner.DefaultEditor(jSpinner1));
         try {
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/demo?user=root&password=nihal123");
+            con = DriverManager.getConnection("jdbc:mysql://sql5.freemysqlhosting.net:3306/sql5467923","sql5467923","i72hfcDGCJ");
             ps = con.prepareStatement("select i.largeimage,p.pname,p.price,p.quantity,p.rating,p.info from image i,product p where i.category = p.category and p.pid =" + pid + "");
             ResultSet rs = ps.executeQuery();
             byte[] image = null;
@@ -51,7 +51,8 @@ public class BuyScreen extends javax.swing.JFrame {
                 product_name.setText(rs.getString("pname"));
                 q = rs.getInt("quantity");
                 Quantity.setText(String.valueOf(q));
-                jSpinner1.setModel(new javax.swing.SpinnerNumberModel(0, 0, q, 1));
+                jSpinner1.setModel(new javax.swing.SpinnerNumberModel(2, 1, q, 1));
+                jSpinner1.setValue(1);
                 productinfo.setText(rs.getString("info"));
                 stars = rs.getInt("rating");
                 String star = "";
@@ -181,14 +182,10 @@ public class BuyScreen extends javax.swing.JFrame {
 
     private void BuybuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuybuttonActionPerformed
         // TODO add your handling code here
-        if (Integer.parseInt(jSpinner1.getValue().toString()) == 0) {
-            JOptionPane.showMessageDialog(this, "Quantity Cannot be 0", "Alert", JOptionPane.ERROR_MESSAGE);
-        } else {
             Invoice invoice = new Invoice(jSpinner1.getValue().toString(), Productid);
             invoice.setVisible(true);
             invoice.setLocationRelativeTo(null);
             this.dispose();
-        }
     }//GEN-LAST:event_BuybuttonActionPerformed
 
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed

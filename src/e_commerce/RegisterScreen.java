@@ -214,7 +214,7 @@ public class RegisterScreen extends javax.swing.JFrame {
                         try {  //jdbc:mysql://localhost:3306/cakemarket?user=root&password=Jayshree123
                             //jdbc:mysql://sql5.freemysqlhosting.net:3306/sql5467923","sql5467923","i72hfcDGCJ
                             long pnumber = Long.parseLong(et_phone.getText());
-                            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/demo?user=root&password=nihal123");
+                            con = DriverManager.getConnection("jdbc:mysql://sql5.freemysqlhosting.net:3306/sql5467923","sql5467923","i72hfcDGCJ");
                             ps = con.prepareStatement("insert into customer(pno,username,fname,lname,emailid,cpassword) values(?,?,?,?,?,?)");
                             ps.setLong(1, pnumber);
                             ps.setString(2, et_username.getText());

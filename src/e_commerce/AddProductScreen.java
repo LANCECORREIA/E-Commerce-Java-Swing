@@ -165,7 +165,7 @@ public class AddProductScreen extends javax.swing.JFrame {
         System.out.println(cb_quantity.getSelectedItem().toString());
         if (!et_pname.getText().isEmpty() && !et_price.getText().isEmpty() && !info.getText().isEmpty()) {
             try {  //jdbc:mysql://localhost:3306/cakemarket?user=root&password=Jayshree123
-                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/demo?user=root&password=nihal123");
+                con = DriverManager.getConnection("jdbc:mysql://sql5.freemysqlhosting.net:3306/sql5467923","sql5467923","i72hfcDGCJ");
                 ps = con.prepareStatement("insert into product(pname,Price,info,category,quantity,shopinfo) values(?,?,?,?,?,?)");
                 ps.setString(1, et_pname.getText());
                 ps.setInt(2, Integer.parseInt(et_price.getText()));
